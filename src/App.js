@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { Button } from './components';
+import { Button, ListCard } from './components';
 import './App.scss';
 
 class App extends Component {
@@ -10,7 +10,8 @@ class App extends Component {
           <h1>Components</h1>
         </header>
         <div className="component-list">
-          <Button href="#" theme='go'> Button </Button>
+          <Button href="#" theme='go'> My Button </Button>
+          <ListCard header={'header'} items={["a", "b"]} />
         </div>
       </div>
     );

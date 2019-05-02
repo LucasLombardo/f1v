@@ -6,18 +6,23 @@ $black: #090900;
 
 .ui-button {
   box-shadow: 5px 10px $black;
+  margin: 100px 0 !important;
+
   &.red {
     background-color: $red;
     color: $white;
   }
+
   &.green {
     background-color: $green;
     color: $white;
   }
+
   &.yellow {
     background-color: $yellow;
     color: $black;
   }
+
   &.default {
     color: $black;
   }

@@ -1,0 +1,21 @@
+.card {
+  width: 328px !important;
+  min-height: 320px !important;
+  display: flex;
+  flex-direction: column;
+  border-radius: 10px;
+  border: 1px solid black;
+  box-shadow: 4px 5px 4px black;
+}
+
+.card-header-text {
+  text-align: center !important;
+  padding: 1rem;
+  background-color: #E8E8E8;
+}
+
+.card-items-container {
+  background-color: #888;
+  flex-grow: 1;
+  padding: 1rem;
+}

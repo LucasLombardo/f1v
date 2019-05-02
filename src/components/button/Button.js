@@ -6,6 +6,22 @@ import PropTypes from 'prop-types';
 import './Button.scss';
 
 class Button extends Component {
+  constructor(props) {
+    super(props)
+
+    this.state = {
+      theme: this.props.theme,
+      themeIndex: 0
+    }
+  }
+
+  handleButtonClick = () => {
+    const themes = 'stop go yield'.split(' ')
+    let currentThemeIndex = this.state.themeIndex
+    currentThemeIndex = (currentThemeIndex + 1) % 3
+    this.setState({theme: themes[currentThemeIndex], themeIndex: currentThemeIndex})
+    console.log(this.state)
+  }
 
   render() {
     const {
@@ -19,9 +35,11 @@ class Button extends Component {
       size,
       variant,
       href,
-      theme,
+      // theme,
       ...restProps
     } = this.props;
+
+    const { theme } = this.state
 
     const themeObj = {};
 
@@ -45,6 +63,8 @@ class Button extends Component {
         themeObj.class = 'default';
     }
 
+
+
     const classes = classNames('ui-button', className, {[themeObj.class]: [theme] });
 
     return (
@@ -58,6 +78,7 @@ class Button extends Component {
         href={href}
         size={themeObj.size || size}
         variant={themeObj.variant || variant}
+        onClick={this.handleButtonClick}
         {...restProps}
       >
         {children}
